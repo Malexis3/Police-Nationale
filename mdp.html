@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Police Nationale</title>
+    <link rel="icon" href="images/pn2.jpeg" width="100px" height="100px">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="Styles/styles.css">
+
+</head>
+<body>
+    <header>
+        <div class="banner">
+            <img src="images/pn1.jpeg" alt="Logo Police Nationale" class="logo" width="100px" height="250px">
+            <h1>Police Nationale</h1>
+        </div>
+        <nav>
+            <ul class="navigation">
+                <li><a href="index.html">Accueil</a></li>
+                <li>
+                    <a href="nous-decouvrir.html">Nous Découvrir &#x25BC;</a>
+                    <ul class="dropdown">
+                        <li><a href="nous-decouvrir/nos-missions.html">Nos Missions</a></li>
+                        <li><a href="nous-decouvrir/notre-organisation.html">Notre Organisation</a></li>
+                        <li><a href="nous-decouvrir/notre-histoire.html">Notre Histoire</a></li>
+                        <li><a href="nous-decouvrir/corps-et-grades.html">Les Corps et les Grades</a></li>
+                    </ul>
+                </li>
+                <li><a href="vous-informer.html">Vous Informez</a></li>
+                <li><a href="nous-rejoindre.html">Nous Rejoindre</a></li>
+                <li><a href="mdp.html">Espace Professionnel</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+        <div class="login-container">
+            <h2>Connexion</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Identifiant</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn">Se connecter</button>
+                <div id="errorMessage" class="error"></div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Police Nationale - Crée par Alexis MARCHAL</p>
+    </footer>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Empêche l'envoi du formulaire
+    
+            // Liste des identifiants, mots de passe et fichiers de redirection
+            const validCredentials = {
+                'Admin-Commandement': {
+                    password: 'CMD',
+                    redirectFile: 'commandement.html'
+                },
+                'Compagnies Républicaines de Securité': {
+                    password: 'CRS 75',
+                    redirectFile: 'Compagnie-Republicaine-de-Securité.html'
+                },
+                'Brigade Anti-Criminalité': {
+                    password: 'BAC 75N',
+                    redirectFile: 'Brigade-Anti-Criminalité.html'
+                },
+                'Compagnies de Sécurisation et dIntervention': {
+                    password: 'CSI 75',
+                    redirectFile: 'Compagnie-de-Securisation-et-dintervenion.html'
+                },
+                'Police Secours': {
+                    password: 'PS 75',
+                    redirectFile: 'Police-Secours.html'
+                },
+                'Police Judiciaire': {
+                    password: 'PJ 75',
+                    redirectFile: 'Police-Judiciaire.html'
+                },
+                '7525246': {
+                    password: '7525246',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '7501836': {
+                    password: '7501836',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '7579613': {
+                    password: '7579613',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '7513547': {
+                    password: '7513547',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '7547561': {
+                    password: '7547561',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '7597980': {
+                    password: '7597980',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '7546391': {
+                    password: '7546391',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '7595801': {
+                    password: '7595801',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '7536178': {
+                    password: '7536178',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '7549158': {
+                    password: '7549158',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '7502351': {
+                    password: '7502351',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '7595842': {
+                    password: '7595842',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '7540371': {
+                    password: '7540371',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '7528059': {
+                    password: '7528059',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '7574896': {
+                    password: '7574896',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '7574035': {
+                    password: '7574035',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '7556249': {
+                    password: '7556249',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '7538472': {
+                    password: '7538472',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '7535894': {
+                    password: '7535894',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '7572513': {
+                    password: '7572513',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '7582047': {
+                    password: '7582047',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '7563912': {
+                    password: '7563912',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '7591392': {
+                    password: '7581392',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '7542951': {
+                    password: '7542951',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '7528475': {
+                    password: '7528475',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '7505183': {
+                    password: '7505183',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '7539476': {
+                    password: '7539476',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '7543865': {
+                    password: '7543865',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '7542739': {
+                    password: '7542739',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '7515284': {
+                    password: '7515284',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '7576184': {
+                    password: '7576184',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '': {
+                    password: '',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '': {
+                    password: '',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '': {
+                    password: '',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '': {
+                    password: '',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '': {
+                    password: '',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '': {
+                    password: '',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '': {
+                    password: '',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '': {
+                    password: '',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '': {
+                    password: '',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '': {
+                    password: '',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '': {
+                    password: '',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '': {
+                    password: '',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '': {
+                    password: '',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '': {
+                    password: '',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '': {
+                    password: '',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '': {
+                    password: '',
+                    redirectFile: 'espace-professionnel.html'
+                },
+                '': {
+                    password: '',
+                    redirectFile: 'espace-professionnel.html'
+                },
+
+                // Ne pas mettre de virgule au dernier
+            };
+    
+            // Récupère les valeurs saisies
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+    
+            // Vérifie les identifiants
+            if (validCredentials[username] && validCredentials[username].password === password) {
+                // Construit l'URL relative en utilisant le fichier de redirection
+                const redirectUrl = `espace-professionnel/${validCredentials[username].redirectFile}`;
+                window.location.href = redirectUrl;
+            } else {
+                // Affiche un message d'erreur
+                document.getElementById('errorMessage').textContent = 'Identifiant ou mot de passe incorrect';
+            }
+        });
+    </script>
+</body>
+</html>
